@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 waitlistForm.style.display = 'none';
                 waitlistSuccess.style.display = 'block';
             } else {
-                alert(`Submission failed: ${data.error || 'Unknown error'}`);
+                const errMsg = data.details ? `Error: ${data.details}` : (data.error || 'Unknown error');
+                alert(`Submission failed: ${errMsg}`);
                 btn.disabled = false;
                 btn.textContent = 'Join Pilot';
             }

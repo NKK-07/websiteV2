@@ -1,0 +1,10 @@
+{
+  "name": "invoiq-landing-v2",
+  "version": "1.0.0",
+  "description": "InvoIQ Landing Page",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "latest"
+  }
+}
