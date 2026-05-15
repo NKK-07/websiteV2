@@ -116,14 +116,61 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
         observer.observe(el);
     });
+    // Animation Keyframes defined in CSS but triggered by JS for Demo
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    });
 });
 
-// Animation Keyframes defined in CSS but triggered by JS for Demo
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+// Admin Function to view signups
+async function loadWaitlist() {
+    const container = document.getElementById('admin-table-container');
+    const rows = document.getElementById('waitlist-rows');
+    
+    if (container.style.display === 'block') {
+        container.style.display = 'none';
+        return;
     }
-`;
-document.head.appendChild(style);
+
+    try {
+        const resp = await fetch('/api/waitlist');
+        const data = await resp.json();
+        
+        rows.innerHTML = '';
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            row.style.borderBottom = '1px solid #111';
+            row.innerHTML = `
+                <td style="padding:10px;">${new Date(item.timestamp).toLocaleString()}</td>
+                <td style="padding:10px;">${item.email}</td>
+            `;
+            rows.appendChild(row);
+        });
+        
+        container.style.display = 'block';
+    } catch (err) {
+        alert('Failed to load waitlist. If you just deployed, wait a few seconds.');
+    }
+}

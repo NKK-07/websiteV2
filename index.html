@@ -23,6 +23,17 @@
                 <a href="#roadmap">Roadmap</a>
                 <a href="#cta-anchor" class="nav-cta">Join Pilot</a>
             </div>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#demo">Product</a>
+            <a href="#security">Security</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#cta-anchor" class="nav-cta">Join Pilot</a>
         </div>
     </nav>
 
@@ -312,6 +323,22 @@
             <div class="footer-content">
                 <div class="logo">INVO<span>IQ</span></div>
                 <p>Started by builders frustrated with static accounting systems.</p>
+            </div>
+            
+            <!-- Hidden Admin Section -->
+            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px dashed var(--faint);">
+                <button onclick="loadWaitlist()" style="background:none; border:none; color:var(--faint); cursor:pointer; font-size: 10px;">[Admin: View Data]</button>
+                <div id="admin-table-container" style="display:none; margin-top:20px;">
+                    <table style="width:100%; font-size:12px; border-collapse:collapse; color:var(--muted);">
+                        <thead>
+                            <tr style="text-align:left; border-bottom:1px solid var(--faint);">
+                                <th style="padding:10px;">Time</th>
+                                <th style="padding:10px;">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody id="waitlist-rows"></tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </footer>
