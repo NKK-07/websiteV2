@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvoIQ | Financial Operating Layer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">INVO<span>IQ</span></div>
+            <div class="nav-links">
+                <a href="#demo">Product</a>
+                <a href="#security">Security</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#cta-anchor" class="nav-cta">Join Pilot</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <div class="badge">Currently onboarding pilot businesses</div>
+            <h1>Every invoice is <span class="accent">operational data.</span><br/>InvoIQ turns it into decisions.</h1>
+            <p class="lead">The financial operating layer for Indian MSMEs. Predictive intelligence, local-first security, and deterministic accounting.</p>
+            
+            <div class="hero-actions">
+                <a href="#cta-anchor" class="btn-primary">Request Early Access</a>
+                <a href="#demo" class="btn-secondary">Watch Demo</a>
+            </div>
+
+            <div class="proof-strip">
+                <div class="proof-item"><span class="dot"></span> Built for India</div>
+                <div class="proof-item"><span class="dot"></span> AI-Native Architecture</div>
+                <div class="proof-item"><span class="dot"></span> Local-First AES-256</div>
+                <div class="proof-item"><span class="dot"></span> Offline Resilient</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="eyebrow">The Context</div>
+            <h2>Generic accounting tools treat invoices as <span class="danger">static PDFs.</span></h2>
+            <p class="subtitle">This creates a massive operational data gap. Static records don't predict risk; they just store it.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Subscription Traps</h3>
+                    <p>Stop paying and you lose access to your own historical activity. Your data is rented, not owned.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Silent Credit Risk</h3>
+                    <p>Traditional ledgers don't flag deteriorating payment patterns until a client actually defaults.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Performance Ceiling</h3>
+                    <p>Web-based accounting tools struggle with massive data grids, killing operational velocity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Killer Demo -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="eyebrow">The System</div>
+            <h2>From Raw Event to <span class="accent">Business Consequence</span></h2>
+            
+            <div class="demo-container">
+                <div class="demo-sidebar">
+                    <button id="start-demo" class="demo-trigger">
+                        <span class="icon">📁</span>
+                        <span>Simulate Invoice Upload</span>
+                    </button>
+                    
+                    <div class="pipeline">
+                        <div class="pipeline-step" id="step-ocr">
+                            <div class="step-status"></div>
+                            <span>OCR Extraction</span>
+                        </div>
+                        <div class="pipeline-step" id="step-gst">
+                            <div class="step-status"></div>
+                            <span>GST/Vendor Parsing</span>
+                        </div>
+                        <div class="pipeline-step" id="step-ledger">
+                            <div class="step-status"></div>
+                            <span>Ledger Categorization</span>
+                        </div>
+                        <div class="pipeline-step" id="step-risk">
+                            <div class="step-status"></div>
+                            <span>Risk Scoring</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-viewport">
+                    <div id="demo-placeholder" class="placeholder-msg">Click "Simulate Upload" to see InvoIQ in action.</div>
+                    
+                    <div id="demo-result" class="demo-result">
+                        <div class="result-header">
+                            <span class="tag">System Insight</span>
+                            <span id="result-time">0.42s execution</span>
+                        </div>
+                        <div class="result-card">
+                            <div class="card-icon">⚠️</div>
+                            <div class="card-body">
+                                <h4>Cashflow Impact Alert</h4>
+                                <p id="insight-text">Vendor dependency on RK Supplies increased 38% in 60 days. Predicted liquidity strain window: 11 days.</p>
+                            </div>
+                        </div>
+                        <div class="ledger-snippet">
+                            <div class="code-line"><span class="dim">DR</span> Accounts Receivable <span class="val">₹1,18,000</span></div>
+                            <div class="code-line"><span class="dim">CR</span> Sales Revenue <span class="val">₹1,00,000</span></div>
+                            <div class="code-line"><span class="dim">CR</span> CGST/SGST <span class="val">₹18,000</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights">
+        <div class="container">
+            <div class="eyebrow">Outputs</div>
+            <h2>Operational Intelligence <span class="accent">Examples</span></h2>
+            
+            <div class="insights-grid">
+                <div class="insight-card-v2">
+                    <div class="card-header">
+                        <span class="icon">📈</span>
+                        <h4>Revenue Velocity</h4>
+                    </div>
+                    <div class="value">42.4 Days</div>
+                    <p>AI detected a 5-day improvement in AR recovery vs last quarter. Identifying top-tier payers.</p>
+                </div>
+                <div class="insight-card-v2 danger">
+                    <div class="card-header">
+                        <span class="icon">⚠️</span>
+                        <h4>Credit Concentration</h4>
+                    </div>
+                    <div class="value">High Risk</div>
+                    <p>Single-client revenue dependency hit 48%. Suggesting diversification targets.</p>
+                </div>
+                <div class="insight-card-v2 success">
+                    <div class="card-header">
+                        <span class="icon">📉</span>
+                        <h4>Tax Efficiency</h4>
+                    </div>
+                    <div class="value">₹2.4L</div>
+                    <p>Real-time ITC eligibility tracking mapped to vendor compliance status.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <div class="eyebrow">Differentiation</div>
+            <h2>InvoIQ vs <span class="dim">Traditional Tools</span></h2>
+            
+            <div class="compare-table-wrapper">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Traditional Cloud SaaS</th>
+                            <th class="highlight">InvoIQ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Primary Goal</td>
+                            <td>Store static records</td>
+                            <td class="highlight">Interpret business activity</td>
+                        </tr>
+                        <tr>
+                            <td>Workflow</td>
+                            <td>Manual entry & review</td>
+                            <td class="highlight">Automated intelligence</td>
+                        </tr>
+                        <tr>
+                            <td>Reporting</td>
+                            <td>Historical accounting</td>
+                            <td class="highlight">Predictive operational signals</td>
+                        </tr>
+                        <tr>
+                            <td>Decision Support</td>
+                            <td>Static PDF reports</td>
+                            <td class="highlight">Live operational guidance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trajectory Section -->
+    <section class="trajectory">
+        <div class="container">
+            <div class="eyebrow">Inevitability</div>
+            <h2>Invoices are becoming machine-readable <span class="accent">operational events.</span></h2>
+            
+            <div class="trajectory-grid">
+                <div class="traj-node">
+                    <div class="node-num">01</div>
+                    <h4>Storage</h4>
+                    <p>Legacy systems focused on digitizing paper.</p>
+                </div>
+                <div class="traj-node">
+                    <div class="node-num">02</div>
+                    <h4>Automation</h4>
+                    <p>Removing manual bookkeeping friction.</p>
+                </div>
+                <div class="traj-node active">
+                    <div class="node-num">03</div>
+                    <h4>Intelligence</h4>
+                    <p>InvoIQ: Converting records into cognitive signals.</p>
+                </div>
+                <div class="traj-node future">
+                    <div class="node-num">04</div>
+                    <h4>Autonomous</h4>
+                    <p>Self-reconciling business operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security -->
+    <section id="security" class="security">
+        <div class="container">
+            <div class="eyebrow">Trust Mechanics</div>
+            <h2>Unbreakable <span class="accent">Local Integrity.</span></h2>
+            
+            <div class="security-grid">
+                <div class="security-card">
+                    <h4>AES-256 Encryption</h4>
+                    <p>All data is encrypted locally with keys only you possess. We cannot read your data.</p>
+                </div>
+                <div class="security-card">
+                    <h4>Local-First DB</h4>
+                    <p>zero cloud reliance for core operations. Work offline, sync only when you choose.</p>
+                </div>
+                <div class="security-card">
+                    <h4>Immutable Logs</h4>
+                    <p>Every financial event is hash-chained. Tamper-evident architecture by design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <div class="eyebrow">The Path</div>
+            <h2>Trajectory to <span class="accent">Release</span></h2>
+            
+            <div class="roadmap-timeline">
+                <div class="roadmap-item current">
+                    <span class="date">Q2 2026</span>
+                    <h4>Pilot Launch</h4>
+                    <p>Core FDEE & Invoicing</p>
+                </div>
+                <div class="roadmap-item">
+                    <span class="date">Q3 2026</span>
+                    <h4>AI Engine v2</h4>
+                    <p>Risk & Forecasting</p>
+                </div>
+                <div class="roadmap-item">
+                    <span class="date">Q4 2026</span>
+                    <h4>Enterprise Hub</h4>
+                    <p>Multi-Entity Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="cta-anchor" class="cta">
+        <div class="container glass">
+            <h1>Stop Renting. <span class="accent">Start Owning.</span></h1>
+            <p>Join the waitlist today and define the future of your financial intelligence.</p>
+            
+            <form id="waitlist-form" class="waitlist-form">
+                <input type="email" id="waitlist-email" placeholder="Enter your business email" required>
+                <button type="submit" class="btn-primary">Join Pilot</button>
+            </form>
+            <div id="waitlist-success" class="waitlist-success">✓ You're on the list! We'll reach out soon.</div>
+
+            <div class="cta-footer">
+                <span>Lifetime License</span>
+                <span>Priority Support</span>
+                <span>Data Sovereignty</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">INVO<span>IQ</span></div>
+                <p>Started by builders frustrated with static accounting systems.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
